@@ -52,11 +52,25 @@ cars.each(function(car) {
 	// console.log(car.toJSON());
 });
 
+var VehicleView = Backbone.View.extend({
+	tagName: 'li',
+	className: 'vehicle',
+	render: function() {
+		var template = _template($('#vehicleView').html());
+		var html = template(this.model.toJSON());
+		return this;
+	}
+});
+
+var VehiclesView = Backbone.View.extend()
+
+
 var Song = Backbone.Model.extend();
 
 var Songs = Backbone.Collection.extend({
 	model: Song
 });
+
 
 var SongView = Backbone.View.extend({
 	initialize: function() {
